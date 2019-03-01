@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Answer from './Answer'
+import Answer from '../Components/Answer'
 import axios from 'axios'
-import Question from './Question'
+import Question from '../Components/Question'
 
 class QuestionAndAnswers extends Component {
   constructor(props) {
@@ -58,7 +58,11 @@ class QuestionAndAnswers extends Component {
         />
         <h3>Answers</h3>
         <form onSubmit={this.createAnswer}>
-          <input type="hidden" name="answer[question_id]" value={this.props.match.params.id} />
+          <input
+            type="hidden"
+            name="answer[question_id]"
+            value={this.props.match.params.id}
+          />
           <textarea name="answer[body]" placeholder="Know the answer?" />
           <button type="submit">Submit</button>
         </form>

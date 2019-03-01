@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Question from './Question'
-import QuestionAndAnswers from './QuestionAndAnswers'
-import Home from './Home'
-import Header from './Header'
-import Browse from './Browse'
+import QuestionAndAnswers from './Pages/QuestionAndAnswers'
+import Home from './Pages/Home'
+import Header from './Components/Header'
+import Browse from './Pages/Browse'
 import axios from 'axios'
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import Question from './Components/Question'
 
 class App extends Component {
   constructor(props) {

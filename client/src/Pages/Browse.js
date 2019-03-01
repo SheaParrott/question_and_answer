@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Question from './Question'
+import Question from '../Components/Question'
 import axios from 'axios'
 
 class Browse extends Component {
@@ -14,11 +14,13 @@ class Browse extends Component {
   componentDidMount = () => {
     //If there is user input, perform a search
     if (this.props.match.params.input) {
-      axios.get(`/api/search/${this.props.match.params.input}`).then(response => {
-        this.setState({
-          questions: response.data.questions
+      axios
+        .get(`/api/search/${this.props.match.params.input}`)
+        .then(response => {
+          this.setState({
+            questions: response.data.questions
+          })
         })
-      })
     } else {
       //If there is no user input, return all questions
       axios.get('/api/questions/').then(response => {
