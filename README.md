@@ -1,24 +1,11 @@
-# README
+# Question & Answers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<br/>
+<br/>
+This is a group project with a Peer. Core back-end and front-end functionality was created using pair programming methodology. Then we forked and cloned the project for all the UX and UI visions to be done separately.
+<br/>
+<br/>
+Technologies used:<br/>
+React.JS<br/>
+Ruby on Rails<br/>
+PostgreSQL<br/>
