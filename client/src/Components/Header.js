@@ -34,22 +34,27 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
-        <div className="navBar">
-          <h5>Q & A</h5>
-          <Link to="/">Home</Link>
-          <Link to="/questions" questions={this.props.questions}>
-            Browse
-          </Link>
-          <form className="navBar" onSubmit={this.search}>
-            <input
-              placeholder="Search by keyword"
-              type="text"
-              onChange={this.addUserInput}
-              name="keyword"
-            />
-          </form>
-        </div>
+      <div className="navBar">
+        <h5 className="appName">Q&A</h5>
+        <Link className="white" to="/">
+          Home
+        </Link>
+        <Link
+          className="white"
+          to="/questions"
+          questions={this.props.questions}
+        >
+          Browse
+        </Link>
+        <form className="navBar" onSubmit={this.search}>
+          <input
+            className="NavBarInput"
+            placeholder="Search by keyword"
+            type="text"
+            onChange={this.addUserInput}
+            name="keyword"
+          />
+        </form>
       </div>
     )
   }

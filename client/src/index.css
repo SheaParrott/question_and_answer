@@ -15,12 +15,28 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #222222;
 }
-
+.appName {
+  color: white;
+}
+.NavBarInput {
+  width: 200px;
+}
+.home {
+  position: relative;
+}
+.dropDown {
+  position: absolute;
+  z-index: 1;
+}
 h1 {
   text-align: center;
   margin: 3rem 0 2rem 0;
   font-size: 3rem;
+}
+h3 {
+  margin: 5px;
 }
 
 .q_and_a {
@@ -28,6 +44,19 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+.white:hover {
+  color: white;
+}
+.green {
+  color: #6cac80;
+}
+.green:hover {
+  color: #7eca96;
 }
 
 .browse {
@@ -67,8 +96,7 @@ input {
   padding: 0.2rem;
 }
 .question {
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin: 20px;
 }
 
 .vote {
@@ -91,4 +119,18 @@ textarea {
   width: 20rem;
   margin: 1rem;
   font-size: 1rem;
+}
+.centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.columnCentering {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hidden {
+  display: none;
 }

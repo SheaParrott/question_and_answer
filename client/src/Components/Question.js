@@ -6,27 +6,34 @@ import axios from 'axios'
 class Question extends Component {
   deleteQuestion = () => {
     axios.delete(`/api/questions/${this.props.question.id}`).then(response => {
-      // this.props.loadAnswers()
+      window.location = '/'
     })
   }
 
   upvoteQuestion = () => {
     console.log(this.props.question.id)
-    axios.put(`/api/questions/upvote/${this.props.question.id}`).then(response => {
-      this.props.loadQuestion()
-    })
+    axios
+      .put(`/api/questions/upvote/${this.props.question.id}`)
+      .then(response => {
+        this.props.loadQuestion()
+      })
   }
 
   downvoteQuestion = () => {
-    axios.put(`/api/questions/downvote/${this.props.question.id}`).then(response => {
-      this.props.loadQuestion()
-    })
+    axios
+      .put(`/api/questions/downvote/${this.props.question.id}`)
+      .then(response => {
+        this.props.loadQuestion()
+      })
   }
 
   render() {
     return (
       <div className="question">
-        <Link to={`/questions/${this.props.question.id}`} className="question-header">
+        <Link
+          to={`/questions/${this.props.question.id}`}
+          className="question-header"
+        >
           <h3 onClick={this.showID} value={this.props.question.key}>
             {this.props.question.header}
           </h3>
@@ -40,8 +47,9 @@ class Question extends Component {
             <button onClick={this.deleteQuestion}>Delete This Question</button>
           </div>
         ) : null}
-
-        <div className="line" />
+        <div className="centering">
+          <div className="line" />
+        </div>
       </div>
     )
   }

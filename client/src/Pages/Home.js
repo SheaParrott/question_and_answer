@@ -8,7 +8,8 @@ class Home extends Component {
     super(props)
 
     this.state = {
-      allQuestions: []
+      allQuestions: [],
+      toggleForm: false
     }
   }
 
@@ -18,23 +19,39 @@ class Home extends Component {
 
   reloadQuestions = () => {
     axios.get('/api/questions').then(response => {
+      console.log(response.data.questions)
       this.setState({
         allQuestions: response.data.questions
       })
     })
   }
+  toggleQuestionsForm = () => {
+    this.setState({
+      toggleForm: !this.state.toggleForm
+    })
+  }
 
   render() {
     return (
-      <div>
-        <div>
-          <h1>Q & A</h1>
+      <div className="home">
+        <div className="columnCentering">
+          <h3>
+            HAVE A QUESTION?
+            <br />
+            THE WORLD HAS ANSWERS.
+          </h3>
+          <h3 className="green" onClick={this.toggleQuestionsForm}>
+            ASK A QUESTION
+          </h3>
         </div>
-        <h3 className="header-caption">
-          Have a question? The world has answers.
-        </h3>
-        <h3 className="question-prompt">Ask anything.</h3>
-        <NewQuestion reloadQuestions={this.reloadQuestions} />
+        <div />
+        <div className="" />
+        {this.state.toggleForm ? (
+          <div className="dropDown">
+            <NewQuestion reloadQuestions={this.reloadQuestions} />
+          </div>
+        ) : null}
+
         <h3 className="top-questions-header">Top Questions</h3>
         {this.state.allQuestions.splice(0, 5).map((question, index) => {
           return (

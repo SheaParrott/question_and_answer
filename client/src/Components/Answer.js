@@ -23,7 +23,9 @@ class Answer extends Component {
   render() {
     return (
       <div className="comment">
-        <div className="line" />
+        <div className="centering">
+          <div className="line" />
+        </div>
         <p>{this.props.body}</p>
         <div className="vote">
           <button onClick={this.upvoteAnswer}>Upvote</button>
