@@ -44,9 +44,9 @@ class Home extends Component {
             THE WORLD HAS ANSWERS.
           </h3> */}
           <div className="dropDownParent">
-            <h3 className="green" onClick={this.toggleQuestionsForm}>
+            <h4 className="green" onClick={this.toggleQuestionsForm}>
               ASK A QUESTION
-            </h3>
+            </h4>
             {this.state.toggleForm ? (
               <i
                 onClick={this.toggleQuestionsForm}
