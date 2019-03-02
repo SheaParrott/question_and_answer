@@ -10,6 +10,15 @@ body {
   margin: 0;
   min-height: 100%;
 }
+div.loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img.loading {
+  width: 200px;
+}
 
 .navBar {
   display: flex;
@@ -44,7 +53,7 @@ h1 {
   font-size: 3rem;
 }
 h3 {
-  margin: 5px;
+  margin: 0;
 }
 .fa-chevron-up,
 .fa-chevron-down {
@@ -64,7 +73,7 @@ h3 {
 }
 a {
   text-decoration: none;
-  color: #4b4b4b;
+  color: #6b6b6b;
 }
 .white:hover {
   color: white;
@@ -98,6 +107,7 @@ a {
 }
 
 .top-questions-header {
+  margin: 10px;
   text-align: center;
 }
 

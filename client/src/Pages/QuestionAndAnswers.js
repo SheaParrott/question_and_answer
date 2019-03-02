@@ -2,15 +2,14 @@ import React, { Component } from 'react'
 import Answer from '../Components/Answer'
 import axios from 'axios'
 import Question from '../Components/Question'
+import Loading from '../Components/Loading'
 
 class QuestionAndAnswers extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      questionAndItsAnswers: {
-        answers: []
-      }
+      questionAndItsAnswers: false
     }
   }
 
@@ -49,6 +48,9 @@ class QuestionAndAnswers extends Component {
   }
 
   render() {
+    if (!this.state.questionAndItsAnswers) {
+      return <Loading />
+    }
     return (
       <div className="q_and_a">
         <Question

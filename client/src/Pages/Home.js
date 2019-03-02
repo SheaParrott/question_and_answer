@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import Question from '../Components/Question'
 import axios from 'axios'
 import NewQuestion from '../Components/NewQuestion'
+import Loading from '../Components/Loading'
 
 class Home extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      allQuestions: [],
+      allQuestions: false,
       toggleForm: false
     }
   }
@@ -31,6 +32,9 @@ class Home extends Component {
   }
 
   render() {
+    if (!this.state.allQuestions) {
+      return <Loading />
+    }
     return (
       <div>
         <div className="columnCentering">
@@ -44,11 +48,14 @@ class Home extends Component {
               ASK A QUESTION
             </h3>
             {this.state.toggleForm ? (
-              <i onClick={this.toggleQuestionsForm} class="fas fa-chevron-up" />
+              <i
+                onClick={this.toggleQuestionsForm}
+                className="fas fa-chevron-up"
+              />
             ) : (
               <i
                 onClick={this.toggleQuestionsForm}
-                class="fas fa-chevron-down"
+                className="fas fa-chevron-down"
               />
             )}
           </div>
@@ -61,7 +68,7 @@ class Home extends Component {
           </div>
         ) : null}
         <div>
-          <h3 className="top-questions-header">Top Questions</h3>
+          <h3 className="top-questions-header">Recent Questions</h3>
           {this.state.allQuestions.map((question, index) => {
             return (
               <div key={index}>

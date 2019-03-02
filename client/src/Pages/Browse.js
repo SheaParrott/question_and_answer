@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import Question from '../Components/Question'
 import axios from 'axios'
+import Loading from '../Components/Loading'
 
 class Browse extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      questions: []
+      questions: false
     }
   }
 
@@ -32,6 +33,9 @@ class Browse extends Component {
   }
 
   render() {
+    if (!this.state.questions) {
+      return <Loading />
+    }
     return (
       <div className="browse">
         {this.state.questions.map((question, index) => {
