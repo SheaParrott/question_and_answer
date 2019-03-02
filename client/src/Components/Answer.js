@@ -22,7 +22,7 @@ class Answer extends Component {
 
   render() {
     return (
-      <div className="comment">
+      <div className="defaultWidth">
         <div className="centering">
           <div className="line" />
         </div>

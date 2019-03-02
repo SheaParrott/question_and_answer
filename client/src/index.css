@@ -1,6 +1,10 @@
 :root {
   font: 16px / 1 sans-serif;
 }
+@font-face {
+  font-family: 'GV';
+  src: url('./assets/Good\ Vibes\ -\ Demo.ttf');
+}
 
 html {
   height: 100%;
@@ -9,6 +13,12 @@ html {
 body {
   margin: 0;
   min-height: 100%;
+}
+.pageLayout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 div.loading {
   height: 100vh;
@@ -28,6 +38,9 @@ img.loading {
 }
 .appName {
   color: white;
+  font-family: 'GV';
+  letter-spacing: 0.8px;
+  font-weight: 500;
 }
 .NavBarInput {
   width: 200px;
@@ -160,4 +173,8 @@ textarea {
 }
 .hidden {
   display: none;
+}
+.defaultWidth {
+  width: 90vw;
+  margin: 5vw;
 }

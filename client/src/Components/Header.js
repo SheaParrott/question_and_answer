@@ -34,7 +34,7 @@ class Header extends Component {
   render() {
     return (
       <div className="navBar">
-        <h5 className="appName">Q&A</h5>
+        <h4 className="appName">Q and A</h4>
         <Link className="white" to="/">
           Home
         </Link>

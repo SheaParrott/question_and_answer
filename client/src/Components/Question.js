@@ -28,7 +28,7 @@ class Question extends Component {
 
   render() {
     return (
-      <div className="question">
+      <div className="question defaultWidth">
         <Link
           to={`/questions/${this.props.question.id}`}
           className="question-header"
