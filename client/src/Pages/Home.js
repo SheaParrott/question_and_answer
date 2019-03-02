@@ -19,9 +19,8 @@ class Home extends Component {
 
   reloadQuestions = () => {
     axios.get('/api/questions').then(response => {
-      console.log(response.data.questions)
       this.setState({
-        allQuestions: response.data.questions
+        allQuestions: response.data.questions.splice(0, 5)
       })
     })
   }
@@ -33,16 +32,26 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="home">
+      <div>
         <div className="columnCentering">
-          <h3>
+          {/* <h3>
             HAVE A QUESTION?
             <br />
             THE WORLD HAS ANSWERS.
-          </h3>
-          <h3 className="green" onClick={this.toggleQuestionsForm}>
-            ASK A QUESTION
-          </h3>
+          </h3> */}
+          <div className="dropDownParent">
+            <h3 className="green" onClick={this.toggleQuestionsForm}>
+              ASK A QUESTION
+            </h3>
+            {this.state.toggleForm ? (
+              <i onClick={this.toggleQuestionsForm} class="fas fa-chevron-up" />
+            ) : (
+              <i
+                onClick={this.toggleQuestionsForm}
+                class="fas fa-chevron-down"
+              />
+            )}
+          </div>
         </div>
         <div />
         <div className="" />
@@ -51,15 +60,16 @@ class Home extends Component {
             <NewQuestion reloadQuestions={this.reloadQuestions} />
           </div>
         ) : null}
-
-        <h3 className="top-questions-header">Top Questions</h3>
-        {this.state.allQuestions.splice(0, 5).map((question, index) => {
-          return (
-            <div key={index}>
-              <Question question={question} />
-            </div>
-          )
-        })}
+        <div>
+          <h3 className="top-questions-header">Top Questions</h3>
+          {this.state.allQuestions.map((question, index) => {
+            return (
+              <div key={index}>
+                <Question question={question} />
+              </div>
+            )
+          })}
+        </div>
       </div>
     )
   }

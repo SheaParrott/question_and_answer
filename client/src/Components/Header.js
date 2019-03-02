@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import history from '../history'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
@@ -39,11 +38,7 @@ class Header extends Component {
         <Link className="white" to="/">
           Home
         </Link>
-        <Link
-          className="white"
-          to="/questions"
-          questions={this.props.questions}
-        >
+        <Link className="white" to="/questions">
           Browse
         </Link>
         <form className="navBar" onSubmit={this.search}>
