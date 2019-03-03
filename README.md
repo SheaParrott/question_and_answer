@@ -7,6 +7,7 @@ This is a group project with a Peer. Core back-end and front-end functionality w
 <br/>
 This is a general question and answers web application. Built to mirror same concepts such as stack overflow or any various question and answers web pages.   
 <br/>
+<br/>
 Technologies used:<br/>
 React.JS<br/>
 Ruby on Rails<br/>
